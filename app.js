@@ -341,4 +341,27 @@ function masLargo( heroes ) {
 }
 let heroes = ['Deadpool', 'Ciclope', 'Magneto', 'Profesor Charles Xavier'];
 let heroeLargo = masLargo( heroes );
-console.log( heroeLargo ); //   Profesor Charles Xavier */
+// console.log( heroeLargo ); //   Profesor Charles Xavier */
+
+/* 9- Crear una función que reciba un arreglo como argumento,
+la función debe de retornar OTRO arreglo pero filtrando todos
+los nombres que empiezan con una determinada letra.Ejemplo:
+let heroes = [‘Doom’, ‘Dr. Strange’, ‘Hulk’, ‘She Hulk’, ‘Spiderman’, ‘Captain Marvel’];
+let heroesCon = filtrarPorLetra( heroes, ‘S’); 
+console.log( heroesCon ); // She Hulk, Spiderman
+ */
+
+function filtrarPorLetra( heroes, letter) {
+  const arr = []
+  for (let i = 0; i < heroes.length; i++) {
+    heroes[i][0] === letter ? arr.push(heroes[i]) : null
+  }
+  if (arr.length > 0) {
+    return arr
+  } else {
+    return `No existen héroes que comiencen con la letra ${letter}`
+  }
+}
+let heroesD = ['Doom', 'Dr. Strange', 'Hulk', 'She Hulk', 'Spiderman', 'Captain Marvel'];
+let heroesCon = filtrarPorLetra( heroesD, 'D'); 
+console.log( heroesCon ); // She Hulk, Spiderman
