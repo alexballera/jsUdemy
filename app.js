@@ -354,7 +354,8 @@ console.log( heroesCon ); // She Hulk, Spiderman
 function filtrarPorLetra( heroes, letter) {
   const arr = []
   for (let i = 0; i < heroes.length; i++) {
-    heroes[i][0] === letter ? arr.push(heroes[i]) : null
+    let heroe = heroes[i]
+    heroe[0] === letter ? arr.push(heroe) : null
   }
   if (arr.length > 0) {
     return arr
