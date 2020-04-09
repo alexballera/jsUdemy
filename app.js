@@ -252,7 +252,7 @@ function areaTriangulo(b,h) {
 // areaTriangulo(10, 5)
 
 function numeroMayor() {
-  let numeros = [1, 6, 8, 4, 2, 7, 10, 3, 5 ];
+  let numeros = [1, 6, 8, 20, 2, 7, 0, 3, 5 ];
   let mayor = 0
   
   for (let i = 0; i < numeros.length; i++) {
@@ -262,4 +262,36 @@ function numeroMayor() {
   }
   console.log('El número mayor es ', mayor)
 }
-numeroMayor()
+// numeroMayor()
+
+/* Dado el siguiente arreglo:
+let numeros = [1, 6, 8, 4, 2, 7, 10, 3, 5 ];
+Haga una impresión en consola así:
+1 es un número impar
+6 es un número par
+
+Debe de utilizar un ciclo FOR para generar dicha impresión */
+
+function numeroPar() {
+  let numeros = [1, 6, 8, 4, 2, 7, 10, 3, 5 ];
+  for (let index = 0; index < numeros.length; index++) {
+    let numero = numeros[index]
+    if (numero % 2 === 0) {
+      console.log(numero.toString(), 'es par')
+    } else {
+      console.log(numero.toString(), 'es impar')
+    }
+  }
+}
+// numeroPar()
+
+function tablaMultiplicar() {
+  for (let i = 1; i <= 5; i++) {
+    let tabla = ''
+    for (let j = 1; j <= 5; j++) {
+      tabla += `${j * i}     `
+    }
+    console.log(tabla)
+  }
+}
+tablaMultiplicar()
