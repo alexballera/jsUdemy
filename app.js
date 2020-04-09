@@ -294,4 +294,56 @@ function tablaMultiplicar() {
     console.log(tabla)
   }
 }
-tablaMultiplicar()
+// tablaMultiplicar()
+
+/* 
+Crear una función que reciba 3 argumentos numéricos ( a, b, c),
+la función se debe de llamar max, la función debe de determinar
+cual es el mayor de los 3 y retornarlo...
+la función debe de trabajar así:
+let mayor = max( 5, 2, 6);
+console.log( mayor ); // 6
+ */
+
+ function max(a, b, c) {
+   let numeros = [a, b, c]
+   let mayor = 0
+
+   for (let i = 0; i < numeros.length; i++) {
+     if (numeros[i] > mayor) {
+       mayor = numeros[i]
+     }
+   }
+   return mayor
+ }
+let mayor = max( 5, 2, 10);
+// console.log( mayor );
+
+
+/* 8- Crear una función que reciba como argumento un arreglo,
+la función debe de retornar el nombre que tenga más letras del arreglo,
+y debe de trabajar así:
+let heroes = [‘Deadpool’, ‘Ciclope’, ‘Magneto’, ‘Profesor Charles Xavier’];
+let heroeLargo = masLargo( heroes );
+console.log( heroeLargo ); //   Profesor Charles Xavier */
+
+function masLargo( heroes ) {
+
+  let largo1 = heroes[0].length
+  let largo2 = heroes[1].length
+  let largo3 = heroes[2].length
+  let largo4 = heroes[3].length
+  
+  if ((largo1 > largo2) && (largo1 > largo3) && (largo1 > largo4)) {
+    return heroes[0]
+  } else if ((largo2 > largo3) && (largo2 > largo4)) {
+    return heroes[1]
+  } else if (heroes[2].length > largo4) {
+    return heroes[2]
+  } else {
+    return heroes[3]
+  }
+}
+let heroes = ['Deadpool', 'Ciclope', 'Magneto', 'Profesor Charles Xavier'];
+let heroeLargo = masLargo( heroes );
+console.log( heroeLargo ); //   Profesor Charles Xavier */
