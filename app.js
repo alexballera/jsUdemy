@@ -328,21 +328,16 @@ let heroeLargo = masLargo( heroes );
 console.log( heroeLargo ); //   Profesor Charles Xavier */
 
 function masLargo( heroes ) {
+  let nombreMasLargo = ''
 
-  let largo1 = heroes[0].length
-  let largo2 = heroes[1].length
-  let largo3 = heroes[2].length
-  let largo4 = heroes[3].length
-  
-  if ((largo1 > largo2) && (largo1 > largo3) && (largo1 > largo4)) {
-    return heroes[0]
-  } else if ((largo2 > largo3) && (largo2 > largo4)) {
-    return heroes[1]
-  } else if (heroes[2].length > largo4) {
-    return heroes[2]
-  } else {
-    return heroes[3]
+  for (let i = 0; i < heroes.length; i++) {
+    nombre = heroes[i]
+    if (nombre.length > nombreMasLargo.length) {
+      nombreMasLargo = nombre
+    }
   }
+  return nombreMasLargo
+
 }
 let heroes = ['Deadpool', 'Ciclope', 'Magneto', 'Profesor Charles Xavier'];
 let heroeLargo = masLargo( heroes );
