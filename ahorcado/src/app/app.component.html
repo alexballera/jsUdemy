@@ -13,7 +13,7 @@
   </div>
   <div class="row">
     <div class="col text-center">
-      <button class="btn btn-primary" *ngFor="let letra of letras">{{letra}}</button>
+      <button (click)="comprobar(letra)" class="btn btn-primary" *ngFor="let letra of letras">{{letra}}</button>
     </div>
   </div>
 </div>
