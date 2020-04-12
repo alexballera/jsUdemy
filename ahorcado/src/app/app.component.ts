@@ -11,6 +11,8 @@ export class AppComponent {
 
   palabraOculta = '_ ';
 
+  intentos = 0;
+
   letras = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
             'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S',
             'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
@@ -18,7 +20,8 @@ export class AppComponent {
     this.palabraOculta = '_ '.repeat(this.palabra.length)
   }
 
-  comprobar(letra) {
+  comprobar(letra: string) {
+    this.existeLetra(letra);
     const palabraOcultaArr = this.palabraOculta.split(' ');
     for (let i = 0; i < this.palabra.length; i++) {
       if (this.palabra[i] === letra) {
@@ -26,5 +29,14 @@ export class AppComponent {
       }
     }
     this.palabraOculta = palabraOcultaArr.join(' ');
+  }
+
+  existeLetra(letra: string) {
+    if (this.palabra.indexOf(letra) >= 0) {
+      console.log('Letra existe', letra);
+    } else {
+      console.log('Letra no existe', letra);
+      this.intentos ++;
+    }
   }
 }
