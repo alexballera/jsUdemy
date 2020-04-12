@@ -13,6 +13,10 @@ export class AppComponent {
 
   intentos = 0;
 
+  gano = false;
+
+  perdio = false;
+
   letras = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
             'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S',
             'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
@@ -29,13 +33,26 @@ export class AppComponent {
       }
     }
     this.palabraOculta = palabraOcultaArr.join(' ');
+    this.verificaGane();
+  }
+
+  verificaGane() {
+    const palabraArr = this.palabraOculta.split(' ');
+    const palabraArrEvaluar = palabraArr.join('');
+    if (palabraArrEvaluar === this.palabra) {
+      this.gano = true;
+      console.log('Usuario Ganó');
+    }
+
+    if (this.intentos >= 9) {
+      this.perdio = true;
+      console.log('Usuario PErdió');
+    }
   }
 
   existeLetra(letra: string) {
     if (this.palabra.indexOf(letra) >= 0) {
-      console.log('Letra existe', letra);
     } else {
-      console.log('Letra no existe', letra);
       this.intentos ++;
     }
   }
