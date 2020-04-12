@@ -46,7 +46,7 @@ export class AppComponent {
 
     if (this.intentos >= 9) {
       this.perdio = true;
-      console.log('Usuario PErdió');
+      console.log('Usuario Perdió');
     }
   }
 
